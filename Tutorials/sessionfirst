@@ -1,0 +1,28 @@
+HTML
+
+HTML is a hyper Text Markup Language
+
+Tags
+
+<h>
+<p>
+<div>
+<span>
+<a>
+<img>
+<input>
+<form>
+
+
+Github basic commands
+
+1. This command is used to pull the new changes from github
+
+   git pull origin main
+
+2. It will add the changes in staged area
+
+git add .
+
+3. git commit -m "saving  my first changes"
+4. git push origin main

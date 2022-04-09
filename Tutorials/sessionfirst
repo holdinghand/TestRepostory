@@ -26,3 +26,32 @@ git add .
 
 3. git commit -m "saving  my first changes"
 4. git push origin main
+
+
+
+
+What is CSS?
+It is a Language for styling the html elements.
+
+What is Javascript?
+
+It is  a programming language that allows you to change static contents dynamically from your browser, you can add animation, you can create multimedia things.
+
+
+
+How to write CSS in our webpages.
+
+1. Inline Styling.
+2. Internal Styling.
+3. External Styling.
+
+
+Javascript Events
+
+onclick
+onchange
+onmousemove
+onfocusout
+
+
+

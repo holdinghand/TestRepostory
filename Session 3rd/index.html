@@ -32,20 +32,22 @@
 <script>
 
   const calulatorOperation = (operator) => {
-    if (operator == "add") {
+    //if (operator == "add" && document.getElementById('firstNumber').value!=null) {
+    if (operator == "add" && document.getElementById('firstNumber').value=='') {
+      alert("error");
       let firstNumber = document.getElementById('firstNumber').value;
       let secondNumber = document.getElementById('secondNumber').value;
       let result = Number(firstNumber) + Number(secondNumber)
       document.getElementById('result').value = result;
-    } else if (operator == "sub") {//girls
+    } else if (operator == "sub" && document.getElementById('firstNumber').value=='') {//girls
       alert("you are doing subtraction operation")
-    } else if (operator == "mul") {//inaam
+    } else if (operator == "mul" && document.getElementById('firstNumber').value=='') {//inaam
       alert("you are doing Multiplication operation")
-    } else if (operator == "div") {//Muntazir
+    } else if (operator == "div" && document.getElementById('firstNumber').value=='') {//Muntazir
       alert("you are doing Division operation")
     }
  //  Modulas  tawheed
-      else if (operator == "module") {
+      else if (operator == "module"&& document.getElementById('firstNumber').value=='') {
       let firstNumber = document.getElementById('firstNumber').value;
       let secondNumber = document.getElementById('secondNumber').value;
       let result = Number(firstNumber) % Number(secondNumber)

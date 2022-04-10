@@ -33,21 +33,22 @@
 
   const calulatorOperation = (operator) => {
     //if (operator == "add" && document.getElementById('firstNumber').value!=null) {
-    if (operator == "add" && document.getElementById('firstNumber').value=='') {
-      alert("error");
+    if (operator == "add" && document.getElementById('firstNumber').value!='') {
+      alert("Please fillup the required field");
       let firstNumber = document.getElementById('firstNumber').value;
       let secondNumber = document.getElementById('secondNumber').value;
       let result = Number(firstNumber) + Number(secondNumber)
       document.getElementById('result').value = result;
-    } else if (operator == "sub" && document.getElementById('firstNumber').value=='') {//girls
+    } else if (operator == "sub" && document.getElementById('firstNumber').value!='') {//girls
       alert("you are doing subtraction operation")
-    } else if (operator == "mul" && document.getElementById('firstNumber').value=='') {//inaam
+    } else if (operator == "mul" && document.getElementById('firstNumber').value!='') {//inaam
       alert("you are doing Multiplication operation")
-    } else if (operator == "div" && document.getElementById('firstNumber').value=='') {//Muntazir
+    } else if (operator == "div" && document.getElementById('firstNumber').value!='') {//Muntazir
       alert("you are doing Division operation")
     }
  //  Modulas  tawheed
-      else if (operator == "module"&& document.getElementById('firstNumber').value=='') {
+      else if (operator == "module"&& document.getElementById('firstNumber').value!='') {
+        alert("Please fillup the required field");
       let firstNumber = document.getElementById('firstNumber').value;
       let secondNumber = document.getElementById('secondNumber').value;
       let result = Number(firstNumber) % Number(secondNumber)

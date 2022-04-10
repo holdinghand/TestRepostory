@@ -25,6 +25,7 @@
       <button type="button" onclick="calulatorOperation('sub')" class="btn btn-warning">Sub</button>
       <button type="button" onclick="calulatorOperation('mul')" class="btn btn-success">Multiple</button>
       <button type="button" onclick="calulatorOperation('div')" class="btn btn-warning">Division</button>
+      <button type="button" onclick="calulatorOperation('module')" class="btn btn-danger">Module</button>
     </div>
   </div>
 </body>
@@ -43,11 +44,18 @@
     } else if (operator == "div") {//Muntazir
       alert("you are doing Division operation")
     }
+ //  Modulas  tawheed
+      else if (operator == "module") {
+      let firstNumber = document.getElementById('firstNumber').value;
+      let secondNumber = document.getElementById('secondNumber').value;
+      let result = Number(firstNumber) % Number(secondNumber)
+      document.getElementById('result').value = result;
 
-    //  Modulas  tawheed
-    // percentage Waseem
 
   }
+  
+    // percentage Waseem
+}
 
 
 </script>

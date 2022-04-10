@@ -25,6 +25,8 @@
       <button type="button" onclick="calulatorOperation('sub')" class="btn btn-warning">Sub</button>
       <button type="button" onclick="calulatorOperation('mul')" class="btn btn-success">Multiple</button>
       <button type="button" onclick="calulatorOperation('div')" class="btn btn-warning">Division</button>
+      <button type="button" onclick="calulatorOperation('per')" class="btn btn-warning">Percentage</button>
+
     </div>
   </div>
 </body>
@@ -43,9 +45,28 @@
     } else if (operator == "div") {//Muntazir
       alert("you are doing Division operation")
     }
+    //Waseem Percentage
+    else if (operator == "per")  
+    {
 
-    //  Modulas  tawheed
-    // percentage Waseem
+      let firstNumber = document.getElementById('firstNumber').value;
+      let secondNumber = document.getElementById('secondNumber').value;
+
+      if (firstNumber == '' || secondNumber == '')  //condition for validating the inputs 
+        alert("Please Enter the values in the respective input box's")
+      else {
+        let result = (Number(firstNumber) / Number(secondNumber)) * 100   //calculating percentage
+
+        // to clear the text box's after clicking the Percentage button
+        document.getElementById('firstNumber').value = '';
+        document.getElementById('secondNumber').value = '';
+
+        //Result
+        document.getElementById('result').value = result;
+      }
+    }
+
+
 
   }
 

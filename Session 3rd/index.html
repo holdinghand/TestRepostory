@@ -1,0 +1,62 @@
+<html>
+
+<head>
+  <title>My First WebPage</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <div class="mb-3">
+      <label for="firstNumber" class="form-label">Enter Your First Number:</label>
+      <input type="number" class="form-control" value="" id="firstNumber" placeholder="Enter your first number..">
+    </div>
+    <div class="mb-3">
+      <label for="secondNumber" class="form-label">Enter Your Second Number:</label>
+      <input type="number" class="form-control" value="" id="secondNumber" placeholder="Enter your Second number..">
+    </div>
+    <div class="mb-3">
+      <label for="result" class="form-label">Your Result Is:</label>
+      <input type="number" class="form-control" value="" id="result">
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+      <button type="button" onclick="calulatorOperation('add')" class="btn btn-danger">Add</button>
+      <button type="button" onclick="calulatorOperation('sub')" class="btn btn-warning">Sub</button>
+      <button type="button" onclick="calulatorOperation('mul')" class="btn btn-success">Multiple</button>
+      <button type="button" onclick="calulatorOperation('div')" class="btn btn-warning">Division</button>
+    </div>
+  </div>
+</body>
+<script>
+
+  const calulatorOperation = (operator) => {
+    if (operator == "add") {
+      let firstNumber = document.getElementById('firstNumber').value;
+      let secondNumber = document.getElementById('secondNumber').value;
+      let result = Number(firstNumber) + Number(secondNumber)
+      document.getElementById('result').value = result;
+    } else if (operator == "sub") {//girls
+      let firstNumber = document.getElementById('firstNumber').value;
+      let secondNumber = document.getElementById('secondNumber').value;
+       let result = Number(firstNumber) - Number(secondNumber)
+       document.getElementById('result').value = result;
+      alert("you are doing subtraction operation")
+    } else if (operator == "mul") {//inaam
+      alert("you are doing Multiplication operation")
+    } else if (operator == "div") {//Muntazir
+      alert("you are doing Division operation")
+    }
+
+    //  Modulas  tawheed
+    // percentage Waseem
+
+  }
+
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</html>

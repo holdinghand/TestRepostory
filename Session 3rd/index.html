@@ -41,7 +41,13 @@
     } else if (operator == "mul") {//inaam
       alert("you are doing Multiplication operation")
     } else if (operator == "div") {//Muntazir
-      alert("you are doing Division operation")
+      if (operator === "div"){
+        let firstNumber = document.getElementById('firstNumber').value;
+        let secondNumber = document.getElementById('secondNumber').value;
+        let result = Number(firstNumber) / Number(secondNumber)
+        document.getElementById('result').value = result;
+      }
+      // alert("you are doing Division operation")
     }
 
     //  Modulas  tawheed

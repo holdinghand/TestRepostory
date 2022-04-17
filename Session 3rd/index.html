@@ -38,7 +38,12 @@
       document.getElementById('result').value = result;
     } else if (operator == "sub") {//girls
       alert("you are doing subtraction operation")
-    } else if (operator == "mul") {//inaam
+    } else
+     if (operator == "mul") {
+       let firstNumber = document.getElementById('firstNumber').value;
+       let SecondNumber = document.getElementById('SecondNumber').value;
+       let result = Number(FirstNumber) * Number(SecondNumber)
+       document.getElementById('result').value = result;
       alert("you are doing Multiplication operation")
     } else if (operator == "div") {//Muntazir
       alert("you are doing Division operation")

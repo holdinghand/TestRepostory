@@ -46,78 +46,12 @@ How to write CSS in our webpages.
 3. External Styling.
 
 
-
-Javascript Events.
+Javascript Events
 
 onclick
 onchange
 onmousemove
 onfocusout
-
-
-Input tag of different types.
-
-
-Datatypes
-undefined
-string  "this is a text"
-bool
-number
-array=["apple","Mango","orange"];
-objects={'name':'Muzamil','address':'tangmarg'}
-
-ES5
-ES6
-
-ES5
-function functionname(){
-this.bind()
-}
-
-ES6
-const Functionname=()=>{
-
-}
-
-var x;
-let x= "something"
-const temp="test"
-x="something new";
-
-temp="test2"
-
-for(let i=0;i<length;i++){
-
-}
-
-console.log(i)
-
-
-calculator
-
-add
-sub
-mul
-div
-modulas
-
-
-
-Padding:-
-Margin:-
-
-DOM: Document Object Model
-
-object
-html
-->head
-  ->title
-->body
-  ->div
-    ->input
-
-
-
 
 
 

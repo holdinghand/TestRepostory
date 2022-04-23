@@ -1,0 +1,6 @@
+const editRowTable = (obj) => {
+  debugger
+  let x = obj.getAttribute('rowNum');
+  debugger
+
+}

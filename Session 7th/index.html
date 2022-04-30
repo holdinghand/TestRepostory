@@ -40,6 +40,10 @@
           <th scope="col">Last Name</th>
           <th scope="col">Email</th>
           <th scope="col">Action</th>
+          <th scope="col"><button class='btn btn-danger' id="Dall" onclick="DeleteAlll()">DeleteAll</button></th>
+          <th scope="col"><button class='btn btn-danger' id="Sel" onclick="SelectAlll()">SelectAll</button></th>
+          <th scope="col"><button class='btn btn-danger' id="Sel" onclick="DeselectAlll()">DeselectAll</button></th>
+
         </tr>
       </thead>
       <tbody id="addRecordsDynamically">
@@ -53,11 +57,27 @@
   var tableData = "";
   var count = 0;
   var tableRecords = [
-    {'firstName': 'Muzamil', 'lastName': 'Reshi', 'email': 'm@gmail.com'},
-    {'firstName': 'Sameer', 'lastName': 'Reshi', 'email': 's@gmail.com'},
-    {'firstName': 'Showkat', 'lastName': 'Malik', 'email': 's@gmail.com'}
+    { 'firstName': 'Muzamil', 'lastName': 'Reshi', 'email': 'm@gmail.com' },
+    { 'firstName': 'Sameer', 'lastName': 'Reshi', 'email': 's@gmail.com' },
+    { 'firstName': 'Showkat', 'lastName': 'Malik', 'email': 's@gmail.com' }
   ];
 
+  const InsertRecords = () => {
+    var records = "";
+    for (let i = 0; i < tableRecords.length; i++) {
+      records += "<tr>";
+      records += "<th>" + Number(i + 1) + "</th>"
+      records += "<td>" + tableRecords[i].firstName + "</td>"
+      records += "<td>" + tableRecords[i].lastName + "</td>"
+      records += "<td>" + tableRecords[i].email + "</td>"
+      records += "<td><button type='button' whichRow=" + i + " onclick='editRowTable(this)' class='btn btn-danger'>Edit</button>"
+      records += "<td><button type='button' rowNum=" + i + " onclick='deleteRowTable(this)' class='btn btn-danger'>Delete</button> </td>"
+      records += "<td><input type='checkbox' id='vehicle1' name='color' value=" + i + " > </td>"
+      records += "</tr>"
+    }
+    return records;
+  }
+  //for editing a row
   const editRowTable = (_this) => {
     console.log(_this);
     let index = _this.getAttribute('whichRow')
@@ -71,85 +91,57 @@
         break;
       }
     }
-    // debugger
+
   }
 
   window.onload = function () {
-    var records = "";
-    for (let i = 0; i < tableRecords.length; i++) {
-      records += "<tr>";
-      records += "<th>" + Number(i + 1) + "</th>"
-      records += "<td>" + tableRecords[i].firstName + "</td>"
-      records += "<td>" + tableRecords[i].lastName + "</td>"
-      records += "<td>" + tableRecords[i].email + "</td>"
-      records += "<td><button type='button' whichRow=" + i + " onclick='editRowTable(this)' class='btn btn-danger'>Edit</button>"
-      records += "<button type='button' rowNum=" + i + " onclick='deleteRowTable(this)' class='btn btn-danger'>Delete</button> </td>"
-      records += "</tr>"
-    }
-    document.getElementById("addRecordsDynamically").innerHTML = records;
+    document.getElementById("addRecordsDynamically").innerHTML = InsertRecords();
   }
 
-
+  //for Inserting and Updating a row
   const addNewRecordToTable = () => {
-    debugger
+    // debugger
     let fName = document.getElementById('firstName').value;
     let lName = document.getElementById('lastName').value;
     let email = document.getElementById('email').value;
     let userId = document.getElementById('updatevalue').value;
-    debugger
-    if (userId == '') {
-      //It is for add operation
-      tableRecords.push({'firstName': fName, 'lastName': lName, 'email': email})
-      var records = "";
-      for (let i = 0; i < tableRecords.length; i++) {
-        records += "<tr>";
-        records += "<th>" + Number(i + 1) + "</th>"
-        records += "<td>" + tableRecords[i].firstName + "</td>"
-        records += "<td>" + tableRecords[i].lastName + "</td>"
-        records += "<td>" + tableRecords[i].email + "</td>"
-        records += "<td><button type='button' whichRow=" + i + " onclick='editRowTable(this)' class='btn btn-danger'>Edit</button>"
-        records += "<button type='button' rowNum=" + i + " onclick='deleteRowTable(this)' class='btn btn-danger'>Delete</button> </td>"
-        records += "</tr>"
-      }
+    if (fName == '' || lName == '' || email == '') {  //validating the fields for Null values
+      alert("Please fill out all the  fields ");
+    }
+    else {
+      // debugger
+      if (userId == '') {
+        //It is for add operation
+        tableRecords.push({ 'firstName': fName, 'lastName': lName, 'email': email })
+        document.getElementById('firstName').value = ""
+        document.getElementById('lastName').value = ""
+        document.getElementById('email').value = ""
 
-      document.getElementById('firstName').value = ""
-      document.getElementById('lastName').value = ""
-      document.getElementById('email').value = ""
-
-      document.getElementById("addRecordsDynamically").innerHTML = records;
-    } else {
-      // It is for update operation
-      for (let i = 0; i < tableRecords.length; i++) {
-        if (userId == i) {
-          tableRecords[i].firstName = document.getElementById('firstName').value;
-          tableRecords[i].lastName = document.getElementById('lastName').value;
-          tableRecords[i].email = document.getElementById('email').value;
-          document.getElementById('updatevalue').value = '';
-          break;
+        document.getElementById("addRecordsDynamically").innerHTML = InsertRecords();
+      } else {
+        // It is for update operation
+        for (let i = 0; i < tableRecords.length; i++) {
+          if (userId == i) {
+            tableRecords[i].firstName = document.getElementById('firstName').value;
+            tableRecords[i].lastName = document.getElementById('lastName').value;
+            tableRecords[i].email = document.getElementById('email').value;
+            document.getElementById('updatevalue').value = '';
+            break;
+          }
         }
+
+
+        document.getElementById('firstName').value = ""
+        document.getElementById('lastName').value = ""
+        document.getElementById('email').value = ""
+
+        document.getElementById("addRecordsDynamically").innerHTML = InsertRecords();
+        document.getElementById('addorupdate').innerHTML = 'Add'
+
       }
-
-      var records = "";
-      for (let i = 0; i < tableRecords.length; i++) {
-        records += "<tr>";
-        records += "<th>" + Number(i + 1) + "</th>"
-        records += "<td>" + tableRecords[i].firstName + "</td>"
-        records += "<td>" + tableRecords[i].lastName + "</td>"
-        records += "<td>" + tableRecords[i].email + "</td>"
-        records += "<td><button type='button' whichRow=" + i + " onclick='editRowTable(this)' class='btn btn-danger'>Edit</button>"
-        records += "<button type='button' rowNum=" + i + " onclick='deleteRowTable(this)' class='btn btn-danger'>Delete</button> </td>"
-        records += "</tr>"
-      }
-
-      document.getElementById('firstName').value = ""
-      document.getElementById('lastName').value = ""
-      document.getElementById('email').value = ""
-
-      document.getElementById("addRecordsDynamically").innerHTML = records;
-      document.getElementById('addorupdate').innerHTML = 'Add'
-
     }
   }
+  //for deleting a row
   const deleteRowTable = (_this) => {
     let userid = _this.getAttribute('rowNum');
     let removeRecordFromTableRecords = []
@@ -162,19 +154,51 @@
       }
     }
     tableRecords = removeRecordFromTableRecords;
-    var records = "";
-    for (let i = 0; i < tableRecords.length; i++) {
-      records += "<tr>";
-      records += "<th>" + Number(i + 1) + "</th>"
-      records += "<td>" + tableRecords[i].firstName + "</td>"
-      records += "<td>" + tableRecords[i].lastName + "</td>"
-      records += "<td>" + tableRecords[i].email + "</td>"
-      records += "<td><button type='button' whichRow=" + i + " onclick='editRowTable(this)' class='btn btn-danger'>Edit</button>"
-      records += "<button type='button' rowNum=" + i + " onclick='deleteRowTable(this)' class='btn btn-danger'>Delete</button> </td>"
-      records += "</tr>"
-    }
+    document.getElementById("addRecordsDynamically").innerHTML = InsertRecords();
+  }
 
-    document.getElementById("addRecordsDynamically").innerHTML = records;
+  //for deleting checked rows only
+  const DeleteAlll = () => {
+    let removeRecordFromTableRecords2 = [];
+    let values = []; //values array will contain values of all checked rows 
+    let checkboxes = document.querySelectorAll('input[name="color"]:checked');    //fetching only checked rows
+    checkboxes.forEach((checkbox) => {
+      values.push(checkbox.value);
+    });
+    // debugger
+    console.log(values)
+    let indicate = 0;
+    for (let i = 0; i < tableRecords.length; i++) {    //for each row in table we need to compare it with every row
+      for (let j = 0; j < values.length; j++) {              //in values array to look for checked rows
+        if (i == values[j]) { //if match found  then kept it there else store it in another array(which will be array of 
+          //unchecked records )
+          ++indicate;
+          break; //if match found then look for second record and so on
+        }
+      }
+      if (indicate == 0)   //storing unchecked records in another array
+        removeRecordFromTableRecords2.push(tableRecords[i]);
+
+      else
+        indicate = 0;
+    }
+    tableRecords = removeRecordFromTableRecords2;   //assignment of  all unchecked records to original array
+    document.getElementById("addRecordsDynamically").innerHTML = InsertRecords();
+  }
+  //for selecting all rows
+
+  const SelectAlll = () => {
+    var ele = document.querySelectorAll('input[name="color"]');  //fetching all rows
+    for (var i = 0; i < ele.length; i++)
+      ele[i].checked = true;
+
+  }
+  //for deselecting all rows
+  const DeselectAlll = () => {
+    var ele = document.querySelectorAll('input[name="color"]:checked');   //fetching only checked rows
+    for (var i = 0; i < ele.length; i++)
+      ele[i].checked = false;
+
   }
 </script>
 

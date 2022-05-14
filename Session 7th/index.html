@@ -13,7 +13,7 @@
 <body>
   <div class="container">
     <div class="mb-3">
-      <label for="firstName" class="form-label">Frist Name:</label>
+      <label for="firstName" class="form-label">First Name:</label>
       <input type="text" class="form-control" value="" id="firstName" placeholder="Enter your first name..">
     </div>
     <div class="mb-3">
@@ -40,6 +40,7 @@
           <th scope="col">Last Name</th>
           <th scope="col">Email</th>
           <th scope="col">Action</th>
+          <th scope="col">Delete All</th>
         </tr>
       </thead>
       <tbody id="addRecordsDynamically">
@@ -84,6 +85,7 @@
       records += "<td>" + tableRecords[i].email + "</td>"
       records += "<td><button type='button' whichRow=" + i + " onclick='editRowTable(this)' class='btn btn-danger'>Edit</button>"
       records += "<button type='button' rowNum=" + i + " onclick='deleteRowTable(this)' class='btn btn-danger'>Delete</button> </td>"
+      records +="<td> <input type='checkbox'> </td>"
       records += "</tr>"
     }
     document.getElementById("addRecordsDynamically").innerHTML = records;
@@ -109,6 +111,7 @@
         records += "<td>" + tableRecords[i].email + "</td>"
         records += "<td><button type='button' whichRow=" + i + " onclick='editRowTable(this)' class='btn btn-danger'>Edit</button>"
         records += "<button type='button' rowNum=" + i + " onclick='deleteRowTable(this)' class='btn btn-danger'>Delete</button> </td>"
+        records +="<td> <input type='checkbox'> </td>"
         records += "</tr>"
       }
 
@@ -138,6 +141,7 @@
         records += "<td>" + tableRecords[i].email + "</td>"
         records += "<td><button type='button' whichRow=" + i + " onclick='editRowTable(this)' class='btn btn-danger'>Edit</button>"
         records += "<button type='button' rowNum=" + i + " onclick='deleteRowTable(this)' class='btn btn-danger'>Delete</button> </td>"
+        records +="<td> <input type='checkbox'> </td>"
         records += "</tr>"
       }
 
@@ -171,6 +175,7 @@
       records += "<td>" + tableRecords[i].email + "</td>"
       records += "<td><button type='button' whichRow=" + i + " onclick='editRowTable(this)' class='btn btn-danger'>Edit</button>"
       records += "<button type='button' rowNum=" + i + " onclick='deleteRowTable(this)' class='btn btn-danger'>Delete</button> </td>"
+      records +="<td> <input type='checkbox'> </td>"
       records += "</tr>"
     }
 

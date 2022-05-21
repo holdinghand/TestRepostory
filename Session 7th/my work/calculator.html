@@ -1,0 +1,201 @@
+<html>
+    <head>
+        <title>calculator</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .container{
+        width: 50%;
+        height: 500px;
+        border: solid red 2px;
+        background-color: aqua;
+    }
+    .container:hover{
+        background-image: linear-gradient(pink,green,blue);
+    }
+
+</style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-sm-12">
+            <h1 align="center">CALCULATOR</h1>
+            </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-3">
+                    <label>Enter ist number</label>
+
+                </div>
+                <div class="col-sm-9" >
+                    <input type="text" name="" id="no1" value="" placeholder="enter number" onkeypress="return onlyInteger(event)" class="form-control" />
+
+                </div>
+
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-3">
+                    <label>Enter 2nd number</label>
+
+                </div>
+                <div class="col-sm-9">
+                   <input type="text" name="" id="no2" value="" placeholder="enter number" onkeypress="return onlyInteger(event)"  class="form-control"> 
+
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-3">
+                    <button type="button" class="btn btn-success" onclick="add()">+</button>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-success" onclick="sub()">-</button>
+
+                </div>
+                
+
+
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-3">
+                    <button type="button" class="btn btn-success" onclick="mul()">*</button>
+
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-success">/</button>
+
+                </div>
+
+            
+
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-3">
+                    <button class="btn btn-success">%</button>
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-success">^</button>
+
+                </div>
+                
+
+            </div>
+
+
+        </div>
+    </body>
+    <script>
+        var add=()=>
+        {
+            var num1=$("#no1").val();
+            var num2=document.getElementById("no2").value;
+            if(num1=="" || num2=="")
+            {
+                alert("text box is empty");
+            }
+            // else if(num2=="")
+            // {
+            //     alert("please! enter the second number");
+            // }
+            else
+            {
+              var sum;
+              sum=parseInt(num1) + parseInt(num2);
+              alert(sum);
+            } 
+        }   
+
+
+        var sub=()=>
+        {
+            var num1=document.getElementById("no1").value;
+            var num2=document.getElementById("no2").value;
+            if(num1=="")
+            {
+                alert("text box1 is emppty");
+            }
+            else if(num2=="")
+            {
+                alert("text box2 is empty");
+            }
+            else{
+                var subtraction;
+                subtraction=parseInt(num1) - parseInt(num2);
+                alert(subtraction);
+            }
+
+        }
+        
+        var mul=()=>
+        {
+            var num1=document.getElementById("no1").value;
+            var num2=document.getElementById("no2").value;
+          var multiplication;
+          multiplication=parseInt(num1) * parseInt(num2);
+          alert(multiplication);  
+        }
+        // function toInteger(number)
+		// {
+		// 	var numbervalue=number.value;
+        //     var numberid=number.id;
+
+		// 	console.log("number is ",numbervalue,"id is",numberid);
+        //     if(isNaN(numbervalue)){
+        //         console.log("inside isnan");
+        //         // document.getElementById(numberid).value="";
+        //         return false;
+            
+        //     }
+        //     else{
+        //         return true;
+        //     }
+            
+        // function only(evt) {
+          
+          // Only ASCII character in that range allowed
+        //   var x = (evt.which) ? evt.which : evt.keyCode
+            // var x=event.keyCode || event.which;
+        //   if ((x >=65  && x<=90) || (x >= 97 && x <= 122) || (x==32) )
+        // if ((x>=48 && x<=57) || (x==64))
+              
+        //   return true;
+        //   return false;
+    //   }
+		
+		// function onlyItnteger(event)
+        // var num1=document.getElementById("no1").value;
+        // var x=event.keyCode || event.which;
+        // if ((x>=65 && x<=90) || (x>=97 && x<=122) || (x==32))
+        // {
+        //     true;
+        // }
+        // else{
+        //      false;
+        // }
+
+
+
+
+        var onlyInteger=(evnt)=>{
+            var x=event.which || event.keyCode;
+            if(x>=48 && x<=57)
+            return true;
+            return false;
+        }
+
+
+    </script>
+</html>

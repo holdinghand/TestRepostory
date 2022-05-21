@@ -40,6 +40,8 @@
           <th scope="col">Last Name</th>
           <th scope="col">Email</th>
           <th scope="col">Action</th>
+          <th scope="col">DeleteAll</th>
+
         </tr>
       </thead>
       <tbody id="addRecordsDynamically">
@@ -84,6 +86,7 @@
       records += "<td>" + tableRecords[i].email + "</td>"
       records += "<td><button type='button' whichRow=" + i + " onclick='editRowTable(this)' class='btn btn-danger'>Edit</button>"
       records += "<button type='button' rowNum=" + i + " onclick='deleteRowTable(this)' class='btn btn-danger'>Delete</button> </td>"
+      records += "<td><input type='checkbox'> </td>"
       records += "</tr>"
     }
     document.getElementById("addRecordsDynamically").innerHTML = records;
@@ -109,7 +112,8 @@
         records += "<td>" + tableRecords[i].email + "</td>"
         records += "<td><button type='button' whichRow=" + i + " onclick='editRowTable(this)' class='btn btn-danger'>Edit</button>"
         records += "<button type='button' rowNum=" + i + " onclick='deleteRowTable(this)' class='btn btn-danger'>Delete</button> </td>"
-        records += "</tr>"
+        records +="<td> <input type='checkbox'> </td>"
+       records += "</tr>"
       }
 
       document.getElementById('firstName').value = ""
@@ -138,6 +142,7 @@
         records += "<td>" + tableRecords[i].email + "</td>"
         records += "<td><button type='button' whichRow=" + i + " onclick='editRowTable(this)' class='btn btn-danger'>Edit</button>"
         records += "<button type='button' rowNum=" + i + " onclick='deleteRowTable(this)' class='btn btn-danger'>Delete</button> </td>"
+        records +="<td> <input type='checkbox'> </td>"
         records += "</tr>"
       }
 

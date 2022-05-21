@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title> login form </title>
+        <style>
+            body{
+                background-color: blue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container{
+                background-color: white;
+                height: 200px;
+                padding: 50px;
+                text-align: center;
+            }
+            h2{
+                margin: 0px 0px 10px 0px;
+            }
+            input{
+                margin-top: 5px;
+                padding: 10px;
+                width: 200px;
+
+            }
+            .error{
+                color: red;
+                text-align: left;
+                margin: 0px;
+            }
+        </style>
+        
+
+        
+           
+    </head>
+    <body>
+        <div class="container">
+            <h2>login form</h2>
+
+        <form action="message.html" onsubmit="return validateform()" >
+            <input type="text" id="user" value="" placeholder="username" onkeypress=" return onlyText(event)"> <br>
+            <p id="usererror" class="error"></p>
+            <input type="password" id="pass" value="" placeholder="password" onkeypress="return onlyInteger(event)"><br>
+            <p id="passerror" class="error"></p>
+            <input type="submit">
+            
+            
+        </form>
+        </div>
+        <script>
+            var username=document.getElementById("user");
+            var password=document.getElementById("pass");
+            let flag=1;
+
+            function validateform()
+            {
+                if(username.value=="")
+                {
+                  document.getElementById("usererror").innerHTML="empty box";
+                  flag=0;
+                }
+                else if(username.value.length<3)
+                {
+                    document.getElementById("usererror").innerHTML="max 3 characters";
+                    flag=0;
+                }
+                else{
+                    document.getElementById("usererror").innerHTML=""
+                    flag=1;
+                }
+                 
+                if(password.value=="")
+                {
+                    document.getElementById("passerror").innerHTML="empty box";
+                    flag =0;
+                }
+                else{
+                    document.getElementById("passerror").innerHTML="";
+                    flag=1;
+                }
+
+                if(flag)
+                {
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            
+            
+            }
+
+            let onlyText=(evt)=>{
+                let x=event.which || event.keyCode;
+                if((x>=65 && x<=90)|| (x>=97 && x<=122) || (x==32))
+                return true;
+                return false;
+            }
+
+            let onlyInteger=(evt)=>{
+                let x=event.which || event.keyCode;
+                if(x>=48 && x<=57)
+                return true;
+                return false;
+            }
+        </script>
+
+        
+    </body>
+
+</html>

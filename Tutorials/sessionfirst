@@ -58,3 +58,97 @@ onfocusout
 Implement CRUD Operation.
 
 Create and Retrieve Operation completed.
+
+
+
+Client and Server.
+
+
+Server
+
+DB,(MsSQl,Mysql,MongoDB)(Mysql)
+Backend Language (Nodejs)
+
+Nodejs and Mysql (Backend language) -> Server
+ReactJs(Javascript, html, css) (Frontend Language) -> Client
+
+
+
+
+
+Client -> Request->Server(.NET)->MSSQL
+
+
+
+
+
+
+
+insert,  data-> UI
+update,
+retrieve,
+delete
+
+
+
+DB -Middleware- UI
+
+Middleware
+
+java, android
+php, Laraval, Slim, Zend.
+python,
+javascript(nodejs) V8 engine+C++ Ryan, edge chakra, spiderMonkey : Angular, ReactJs, Nextjs, Viewjs, 
+c# .Net Framework, MSsql
+c++
+c
+
+
+
+OOPs
+
+Class, Object
+
+Unit (Vehicles, Houses, Human being, Animals)
+
+Car -> color, cost, seats
+function brake, aceleter,
+
+
+class student;{
+  private int rollno;
+  private string name;
+  private string address;
+  function getName(){
+    return name
+  }
+  function setName(fname){
+    if(name!==null)
+    {
+     if(name===email){
+
+     }
+    }
+     name=fname
+  }
+}
+
+Template
+
+student Muzamil = new Student()
+Muzamil.setName(Muzamil Ahmad")
+student Sameer = new Student()
+student Mohammad = new Student()
+
+
+Pillers of OPP's
+
+1. Encapsulation
+2. Inheritance
+3. Abstraction
+4. Polymorphism
+
+Encapsulation. When we are wrapping properties and methods in a single unit, it is called encapsulation.
+Abstraction: Hiding the internal logic to the User.
+Inheritance: Coping the behaviour/properties of other class.
+Polymorphish: Many forms. function overloading, operator overloading

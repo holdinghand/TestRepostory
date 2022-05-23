@@ -76,7 +76,23 @@
     // debugger
   }
 
+  const testAsynchroun = () => {
+    // console.log("hi")
+    // console.log("Muzamil ")
+    // console.log("Welcome ")
+    // console.log("To ")
+    // console.log("Javascript ")
+    console.log("hi")
+    setTimeout(() => {
+      console.log("Muzamil ")
+      console.log("Welcome ")
+      console.log("To ")
+    }, 100);
+    console.log("Javascript ")
+  }
+
   window.onload = function () {
+    testAsynchroun()
     var records = "";
     for (let i = 0; i < tableRecords.length; i++) {
       records += "<tr>";

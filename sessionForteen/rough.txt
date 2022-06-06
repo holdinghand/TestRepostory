@@ -1,0 +1,62 @@
+
+// API's : Application Programming interface
+
+// RESTful API's
+
+user=[
+  {id:1,firstName:"Muzamil"},
+  {id:2,firstName:"Mudasir"},
+  {id:3,firstName:"Muneeb"},
+]
+
+
+
+
+// RESTful Services
+app.get('api/users',(req,res)=>{
+  res.send(users)
+})
+app.get('api/users/:id',(req,res)=>{
+  res.send(users)
+})
+app.post('api/users',(req,res)=>{
+  res.send(users)
+})
+
+app.put('api/users/:id',(req,res)=>{
+  res.send(users)
+})
+app.delete('api/users/:id',(req,res)=>{
+  res.send(users)
+})
+// api/users      GET
+// api/users/:id   GET   id=2
+// api/users       POST   user={firstName:"Riyaz"}
+// api/users/:id   PUT     user={firstName:"Azhar"}
+// api/users/:id   DELETE  
+
+// api/customer      GET
+// api/customer/:id   GET   id=2
+// api/customer       POST   user={firstName:"Riyaz"}
+// api/customer/:id   PUT     user={firstName:"Azhar"}
+// api/customer/:id   DELETE  
+
+
+// api/account      GET
+// api/account/:id   GET   id=2
+// api/account       POST   user={firstName:"Riyaz"}
+// api/account/:id   PUT     user={firstName:"Azhar"}
+// api/account/:id   DELETE  
+
+
+
+// CRUD
+
+
+
+
+
+app.get()
+app.post()
+app.put()
+app.delete() 
